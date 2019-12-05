@@ -29,7 +29,7 @@ public class LoginService {
         Optional<User> user = repo.findByUsername(credentials[0]);
         if (user.isPresent()) {
             isValidUser = user.get().getUsername().equals(credentials[0])
-                    && passwordEncoder.matches(credentials[1], user.get().getPassword());
+                    && passwordEncoder.matches(credentials[1],user.get().getPassword());
         }
         if (isValidUser) {
             return user.get();

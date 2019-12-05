@@ -42,7 +42,7 @@ public interface EventRptRepository  extends CrudRepository<EventSummaryEntity, 
 	@Query(value = "SELECT vf.event_id as eventId, vf.employee_id as employeeId, vea.email_status as emailStatus, vf.status as feedbackStatus FROM vol_event_unregistered vea inner join volunteer_feedback_unreg vf on vea.event_id = vf.event_id and vea.employee_id = vf.employee_id;", nativeQuery = true)
 	List<IFeedbackStatus> findAllByVunStatus();
 	
-	@Query(value="SELECT distinct event_id FROM outreachfeedbackdb.event_summary", nativeQuery=true)
+	@Query(value="SELECT distinct event_id FROM fmsdb.event_summary", nativeQuery=true)
 	List<String> findDistinctEvents();
 	
 	Optional<EventSummaryEntity> findByEventIdAndPocId(String eventId, String pocId);

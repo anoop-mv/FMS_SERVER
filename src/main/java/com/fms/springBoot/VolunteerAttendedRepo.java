@@ -27,7 +27,7 @@ public interface VolunteerAttendedRepo extends CrudRepository<VolunteerAttended,
 		return null;
 	}
 
-	@Query(value="SELECT distinct employee_id FROM outreachfeedbackdb.vol_event_attended", nativeQuery=true)
+	@Query(value="SELECT distinct employee_id FROM fmsdb.vol_event_attended", nativeQuery=true)
 	public List<String> findDistinctAttended();
 
 }

@@ -25,7 +25,7 @@ public interface VolunteerNotAttendedRepo extends CrudRepository<VolunteerNotAtt
 
 	public List<VolunteerNotAttended> findByEmailStatus(String string);
 
-	@Query(value="SELECT distinct employee_id FROM outreachfeedbackdb.vol_event_not_attended", nativeQuery=true)
+	@Query(value="SELECT distinct employee_id FROM fmsdb.vol_event_not_attended", nativeQuery=true)
 	public List<String> findDistinctNotAttended();
 
 }

@@ -27,7 +27,7 @@ public interface VolunteerUnregisteredRepo extends CrudRepository<VolunteerUnreg
 
 	public List<VolunteerUnregistered> findByEmailStatus(String string);
 
-	@Query(value = "SELECT distinct employee_id FROM outreachfeedbackdb.vol_event_unregistered", nativeQuery = true)
+	@Query(value = "SELECT distinct employee_id FROM fmsdb.vol_event_unregistered", nativeQuery = true)
 	public List<String> findDistinctUnRegistered();
 
 }
